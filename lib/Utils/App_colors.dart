@@ -21,6 +21,7 @@ class AppColors {
   static const Color grayExtraLight = Color(0xFFDBDDDF);
   static const Color violet = Color(0xFF7D4AF3);
   static const Color button = Color(0xFF7D4AF3);
+  static const Color navber = Color(0xFF888888);
 
   // Primary (Green)
   static const Color greenExtra = Color(0xFF53D66C);

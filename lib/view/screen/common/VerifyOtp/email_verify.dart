@@ -70,6 +70,14 @@ class EmailVerify extends StatelessWidget {
               titleSize: 20,
               titleWeight: FontWeight.w600,
             ),
+            SizedBox(height: 36,),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                IconButton(onPressed: (){}, icon: Icon(Icons.arrow_back,color: Colors.white,)),
+                CommonText(text: "Back to log in",fontSize: 16,fontWeight: FontWeight.w500,color: AppColors.white,)
+              ],
+            )
 
           ],
         ),
