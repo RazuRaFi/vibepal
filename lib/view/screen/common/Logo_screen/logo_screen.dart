@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:vivepal/Utils/App_colors.dart';
+import 'package:vivepal/controller/SplashController/logoController.dart';
 import 'package:vivepal/view/component/CommonText.dart';
 
 class LogoScreen extends StatelessWidget {
@@ -8,6 +11,7 @@ class LogoScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Get.put(LogoController());
     return Scaffold(
       body: Container(
         height: 960.h,

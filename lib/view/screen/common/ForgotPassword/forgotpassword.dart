@@ -1,5 +1,8 @@
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:vivepal/helper/app_routes.dart';
 
 import '../../../../Utils/App_colors.dart';
 import '../../../component/CommonText.dart';
@@ -52,6 +55,10 @@ class ForgotPassword extends StatelessWidget {
            ),
             SizedBox(height: 50,),
             CommonButton(
+              onTap: (){
+                Get.toNamed(AppRoutes.mailverify);
+              },
+              borderColor: Colors.deepPurpleAccent,
               titleText: "Reset Password",
               backgroundColor: AppColors.button,
               buttonRadius: 50,
@@ -62,10 +69,26 @@ class ForgotPassword extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                IconButton(onPressed: (){}, icon: Icon(Icons.arrow_back,color: Colors.white,)),
-                CommonText(text: "Back to log in",fontSize: 16,fontWeight: FontWeight.w500,color: AppColors.white,)
+                IconButton(
+                  onPressed: () {
+                    Get.offAllNamed(AppRoutes.signIn); // use offAllNamed for named route
+                  },
+                  icon: Icon(Icons.arrow_back, color: Colors.white),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    Get.offAllNamed(AppRoutes.signIn);
+                  },
+                  child: CommonText(
+                    text: "Back to log in",
+                    fontSize: 16,
+                    fontWeight: FontWeight.w500,
+                    color: AppColors.white,
+                  ),
+                ),
               ],
             )
+
 
           ],
         ),

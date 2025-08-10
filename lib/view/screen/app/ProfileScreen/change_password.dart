@@ -83,7 +83,11 @@ class ChangePassword extends StatelessWidget {
               ),
               SizedBox(height: 360,),
               CommonButton(
-                onTap: (){},
+                onTap: (){
+                  Get.back();
+
+                },
+                borderColor: Colors.deepPurpleAccent,
                 titleText: "Update Password",backgroundColor: Colors.deepPurple,titleSize: 20,titleWeight: FontWeight.w500,)
             ],
           ),

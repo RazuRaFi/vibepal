@@ -141,14 +141,27 @@ class ProfileScreen extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         CommonText(text: "Recent Events",fontSize: 20,fontWeight: FontWeight.w500,color: Colors.white,),
-                        Row(
-                          children: [
-                           CommonText(text: "View All",fontSize: 12,fontWeight: FontWeight.w500,color: Colors.white,),
-                            IconButton(onPressed: (){
-                              Get.to(()=>RecentEvents());
-                            }, icon: Icon(Icons.arrow_forward_ios_outlined,size: 15,color: Colors.white,))
-                          ],
+                        GestureDetector(
+                          onTap: () {
+                            Get.to(() => RecentEvents());
+                          },
+                          child: Row(
+                            children: [
+                              CommonText(
+                                text: "View All",
+                                fontSize: 14,
+                                fontWeight: FontWeight.w500,
+                                color: Colors.white,
+                              ),
+                              Icon(
+                                Icons.arrow_forward_ios_outlined,
+                                size: 15,
+                                color: Colors.white,
+                              ),
+                            ],
+                          ),
                         )
+
                       ],
                     ),
                     SizedBox(height: 15,),
@@ -201,13 +214,25 @@ class ProfileScreen extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         CommonText(text: "My Posts",fontSize: 20,fontWeight: FontWeight.w500,color: Colors.white,),
-                        Row(
-                          children: [
-                            CommonText(text: "View All",fontSize: 12,fontWeight: FontWeight.w500,color: Colors.white,),
-                            IconButton(onPressed: (){
-                              Get.to(()=>MyPostScreen());
-                            }, icon: Icon(Icons.arrow_forward_ios_outlined,size: 15,color: Colors.white,))
-                          ],
+                        GestureDetector(
+                          onTap: () {
+                            Get.to(() => RecentEvents());
+                          },
+                          child: Row(
+                            children: [
+                              CommonText(
+                                text: "View All",
+                                fontSize: 14,
+                                fontWeight: FontWeight.w500,
+                                color: Colors.white,
+                              ),
+                              Icon(
+                                Icons.arrow_forward_ios_outlined,
+                                size: 15,
+                                color: Colors.white,
+                              ),
+                            ],
+                          ),
                         )
                       ],
                     ),

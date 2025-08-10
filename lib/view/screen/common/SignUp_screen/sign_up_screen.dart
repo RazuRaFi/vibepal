@@ -1,6 +1,9 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:vivepal/Utils/App_colors.dart';
+import 'package:vivepal/helper/app_routes.dart';
 import 'package:vivepal/view/component/common_button.dart';
 import 'package:vivepal/view/component/commont_textfield.dart';
 
@@ -12,6 +15,10 @@ class SignUpScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.black,
+        leading: IconButton(onPressed: (){}, icon: Icon(Icons.arrow_back,color: Colors.white,)),
+      ),
       backgroundColor: AppColors.black,
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -19,7 +26,7 @@ class SignUpScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: 57),
+              SizedBox(height: 27),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
@@ -137,9 +144,13 @@ class SignUpScreen extends StatelessWidget {
                   ),
                   SizedBox(height: 20),
                   CommonButton(
+                    onTap: (){
+                      Get.toNamed(AppRoutes.verifyIdentity);
+                    },
                     titleText: "Sign Up",
                     backgroundColor: AppColors.button,
                     buttonRadius: 50,
+                    borderColor: Colors.deepPurpleAccent,
                   ),
 
                   SizedBox(height: 50),
@@ -154,7 +165,9 @@ class SignUpScreen extends StatelessWidget {
                         color: AppColors.white,
                       ),
                       TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Get.toNamed(AppRoutes.signIn);
+                        },
                         child: CommonText(
                           text: "Sign In",
                           fontSize: 18,

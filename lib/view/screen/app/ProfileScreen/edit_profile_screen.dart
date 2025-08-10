@@ -32,124 +32,25 @@ class EditProfileScreen extends StatelessWidget {
               SizedBox(height: 15,),
               CommonText(text: "General",fontSize: 20,fontWeight: FontWeight.w600,color: Colors.white,),
               SizedBox(height: 10,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                 Row(
-                   spacing: 15,
-                   children: [
-                     Icon(Icons.person,size: 35,color: Colors.deepPurple,),
-                     CommonText(text: "Edit Profile",fontSize: 22,fontWeight: FontWeight.w600,color: Colors.white,),
-                   ],
-                 ),
-                  IconButton(onPressed: (){
-                    Get.toNamed(AppRoutes.editPage);
-                  }, icon: Icon(Icons.arrow_forward_ios_outlined,size: 22,color: Colors.deepPurple,))
-                ],
-              ),
+              _buildRowBar(title: 'Edit Profile', icon:Icons.person, onTap: () {Get.toNamed(AppRoutes.editPage);}),
               Divider(thickness: 1,color: Colors.grey.shade900,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    spacing: 15,
-                    children: [
-                      Icon(Icons.settings,size: 35,color: Colors.deepPurple,),
-                      CommonText(text: "Settings",fontSize: 22,fontWeight: FontWeight.w600,color: Colors.white,),
-                    ],
-                  ),
-                  IconButton(onPressed: (){
-                    Get.toNamed(AppRoutes.setting);
-
-                  }, icon: Icon(Icons.arrow_forward_ios_outlined,size: 22,color: Colors.deepPurple,))
-                ],
-              ),
+              _buildRowBar(title: 'Settings', icon:Icons.settings, onTap: () {Get.toNamed(AppRoutes.setting);}),
               Divider(thickness: 1,color: Colors.grey.shade900,),
               SizedBox(height: 20,),
               CommonText(text: "Support & Help",fontSize: 20,fontWeight: FontWeight.w600,color: Colors.white,),
               SizedBox(height: 10,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    spacing: 15,
-                    children: [
-                      Icon(Icons.feedback,size: 35,color: Colors.deepPurple,),
-                      CommonText(text: "Feedback",fontSize: 22,fontWeight: FontWeight.w600,color: Colors.white,),
-                    ],
-                  ),
-                  IconButton(onPressed: (){
-                    Get.to(()=>FeedbackScreen());
-
-                  }, icon: Icon(Icons.arrow_forward_ios_outlined,size: 22,color: Colors.deepPurple,))
-                ],
-              ),
+              _buildRowBar(title: 'Feedback', icon:Icons.feedback, onTap: () {Get.to(()=>FeedbackScreen());}),
               Divider(thickness: 1,color: Colors.grey.shade900,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    spacing: 15,
-                    children: [
-                      Icon(Icons.question_answer,size: 35,color: Colors.deepPurple,),
-                      CommonText(text: "FAQ",fontSize: 22,fontWeight: FontWeight.w600,color: Colors.white,),
-                    ],
-                  ),
-                  IconButton(onPressed: (){}, icon: Icon(Icons.arrow_forward_ios_outlined,size: 22,color: Colors.deepPurple,))
-                ],
-              ),
+              _buildRowBar(title: 'FAQ', icon:Icons.question_answer, onTap: () {}),
               Divider(thickness: 1,color: Colors.grey.shade900,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    spacing: 15,
-                    children: [
-                      Icon(Icons.contact_page,size: 35,color: Colors.deepPurple,),
-                      CommonText(text: "Contact Us",fontSize: 22,fontWeight: FontWeight.w600,color: Colors.white,),
-                    ],
-                  ),
-                  IconButton(onPressed: (){
-                    Get.to(()=>ContactUs());
-
-                  }, icon: Icon(Icons.arrow_forward_ios_outlined,size: 22,color: Colors.deepPurple,))
-                ],
-              ),
+              _buildRowBar(title: 'Contact Us', icon:Icons.contact_page, onTap: () {Get.to(()=>ContactUs());}),
               Divider(thickness: 1,color: Colors.grey.shade900,),
               SizedBox(height: 20,),
               CommonText(text: "Legal",fontSize: 20,fontWeight: FontWeight.w600,color: Colors.white,),
               SizedBox(height: 10,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    spacing: 15,
-                    children: [
-                      Icon(Icons.local_laundry_service,size: 35,color: Colors.deepPurple,),
-                      CommonText(text: "Terms of Service",fontSize: 22,fontWeight: FontWeight.w600,color: Colors.white,),
-                    ],
-                  ),
-                  IconButton(onPressed: (){
-                    Get.to(()=>TermsServices());
-                  }, icon: Icon(Icons.arrow_forward_ios_outlined,size: 22,color: Colors.deepPurple,))
-                ],
-              ),
+              _buildRowBar(title: 'Terms of Service', icon:Icons.local_laundry_service, onTap: () {Get.to(()=>TermsServices());}),
               Divider(thickness: 1,color: Colors.grey.shade900,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    spacing: 15,
-                    children: [
-                      Icon(Icons.privacy_tip,size: 35,color: Colors.deepPurple,),
-                      CommonText(text: "Privacy Policy",fontSize: 22,fontWeight: FontWeight.w600,color: Colors.white,),
-                    ],
-                  ),
-                  IconButton(onPressed: (){
-                    Get.to(()=>PrivacyPolicy());
-                  }, icon: Icon(Icons.arrow_forward_ios_outlined,size: 22,color: Colors.deepPurple,))
-                ],
-              ),
+              _buildRowBar(title: 'Privacy Policy', icon:Icons.privacy_tip, onTap: () {Get.to(()=>PrivacyPolicy());}),
               Divider(thickness: 1,color: Colors.grey.shade900,),
               SizedBox(height: 20,),
               CommonText(text: "Others",fontSize: 20,fontWeight: FontWeight.w600,color: Colors.white,),
@@ -174,4 +75,37 @@ class EditProfileScreen extends StatelessWidget {
       ),
     );
   }
+
+  GestureDetector _buildRowBar({
+    required String title,
+    required IconData icon,
+    required VoidCallback onTap, // new onTap parameter
+  }) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Row(
+            spacing: 15,
+            children: [
+              Icon(icon, size: 35, color: Colors.deepPurple),
+              CommonText(
+                text: title,
+                fontSize: 22,
+                fontWeight: FontWeight.w600,
+                color: Colors.white,
+              ),
+            ],
+          ),
+          Icon(
+            Icons.arrow_forward_ios_outlined,
+            size: 22,
+            color: Colors.deepPurple,
+          ),
+        ],
+      ),
+    );
+  }
+
 }

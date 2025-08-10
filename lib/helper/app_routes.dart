@@ -2,6 +2,7 @@ import 'package:get/get.dart';
 import 'package:vivepal/view/screen/common/Logo_screen/logo_screen.dart';
 import '../view/component/common_button_navber.dart';
 import '../view/screen/app/HomeScreen/club_details.dart';
+import '../view/screen/app/HomeScreen/mapscreen.dart';
 import '../view/screen/app/HomeScreen/nearby_club.dart';
 import '../view/screen/app/HomeScreen/nearby_events.dart';
 import '../view/screen/app/ProfileScreen/change_password.dart';
@@ -31,7 +32,7 @@ class AppRoutes {
   static const String splash = "/splash.dart";
   static const String logo = "/logo.dart";
   static const String signup = "/signup.dart";
-  static const String verifyidentity = "/verifyidentity.dart";
+  static const String verifyIdentity = "/verifyIdentity.dart";
   static const String mailverify = "/mailverify.dart";
   static const String phoneVerify = "/phoneVerify.dart";
   static const String signIn = "/signIn.dart";
@@ -49,6 +50,7 @@ class AppRoutes {
   static const String nearbyEvents = "/nearbyEvents.dart";
   static const String nearbyClub = "/nearbyClub.dart";
   static const String clubDetails = "/clubDetails.dart";
+  static const String mapScreen = "/mapScreen.dart";
 
   static List<GetPage> routes = [
     GetPage(
@@ -68,7 +70,7 @@ class AppRoutes {
         page: () => const SignUpScreen(),
         transition: Transition.fade),
     GetPage(
-        name: verifyidentity,
+        name: verifyIdentity,
         page: () => const VerifyIdentity(),
         transition: Transition.fade),
     GetPage(
@@ -138,6 +140,10 @@ class AppRoutes {
     GetPage(
         name:clubDetails,
         page: () =>const  ClubDetails(),
+        transition: Transition.fade),
+    GetPage(
+        name:mapScreen,
+        page: () =>const  MapScreen(),
         transition: Transition.fade),
 
 

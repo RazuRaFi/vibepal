@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:vivepal/controller/AuthController/signInController.dart';
+import 'package:vivepal/helper/app_routes.dart';
 
 import '../../../../Utils/App_colors.dart';
 import '../../../component/CommonText.dart';
@@ -115,14 +116,20 @@ class SignInScreen extends StatelessWidget {
                   SizedBox(height: 15),
                   
                   CommonButton(
+                    onTap: (){
+                      Get.toNamed(AppRoutes.navber);
+                    },
                     titleText: "Sign In ",
                     backgroundColor: AppColors.button,
                     buttonRadius: 50,
+                    borderColor: Colors.deepPurpleAccent,
                     titleSize: 20,
                     titleWeight: FontWeight.w600,
                   ),
                   SizedBox(height: 18),
-                  Center(child: TextButton(onPressed: (){}, child: CommonText(text: "Forgot the password?",color: AppColors.white,fontSize: 16,fontWeight: FontWeight.w600,))),
+                  Center(child: TextButton(onPressed: (){
+                    Get.toNamed(AppRoutes.forgotPassword);
+                  }, child: CommonText(text: "Forgot the password?",color: AppColors.white,fontSize: 16,fontWeight: FontWeight.w600,))),
 
                   SizedBox(height: 37),
                   Row(
@@ -136,7 +143,9 @@ class SignInScreen extends StatelessWidget {
                         color: AppColors.white,
                       ),
                       TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Get.toNamed(AppRoutes.signup);
+                        },
                         child: CommonText(
                           text: "Sign Up",
                           fontSize: 18,

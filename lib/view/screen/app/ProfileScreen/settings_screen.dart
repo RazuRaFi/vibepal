@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:vivepal/helper/app_routes.dart';
+import 'package:vivepal/view/screen/app/ProfileScreen/change_password.dart';
+import 'package:vivepal/view/screen/app/ProfileScreen/privacy_setting.dart';
 
 import '../../../component/CommonText.dart';
 
@@ -33,37 +35,9 @@ class SettingsScreen extends StatelessWidget {
         child: Column(
           children: [
             SizedBox(height: 20,),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Row(
-                  spacing: 15,
-                  children: [
-                    Icon(Icons.privacy_tip,size: 35,color: Colors.deepPurple,),
-                    CommonText(text: "Privacy Settings",fontSize: 22,fontWeight: FontWeight.w600,color: Colors.white,),
-                  ],
-                ),
-                IconButton(onPressed: (){
-                  Get.toNamed(AppRoutes.privacySettings);
-                }, icon: Icon(Icons.arrow_forward_ios_outlined,size: 22,color: Colors.deepPurple,))
-              ],
-            ),
+           _buildRowBar(title: "Privacy Settings", icon: Icons.privacy_tip, onTap: (){Get.to(()=>PrivacySettings());}),
             Divider(thickness: 1,color: Colors.grey.shade900,),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Row(
-                  spacing: 15,
-                  children: [
-                    Icon(Icons.lock,size: 35,color: Colors.deepPurple,),
-                    CommonText(text: "Change Password",fontSize: 22,fontWeight: FontWeight.w600,color: Colors.white,),
-                  ],
-                ),
-                IconButton(onPressed: (){
-                  Get.toNamed(AppRoutes.changePassword);
-                }, icon: Icon(Icons.arrow_forward_ios_outlined,size: 22,color: Colors.deepPurple,))
-              ],
-            ),
+            _buildRowBar(title: "Change Password", icon: Icons.lock, onTap: (){Get.to(()=>ChangePassword());}),
             Divider(thickness: 1,color: Colors.grey.shade900,),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -79,6 +53,37 @@ class SettingsScreen extends StatelessWidget {
             ),
           ],
         ),
+      ),
+    );
+  }
+  GestureDetector _buildRowBar({
+    required String title,
+    required IconData icon,
+    required VoidCallback onTap, // new onTap parameter
+  }) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Row(
+            spacing: 15,
+            children: [
+              Icon(icon, size: 35, color: Colors.deepPurple),
+              CommonText(
+                text: title,
+                fontSize: 22,
+                fontWeight: FontWeight.w600,
+                color: Colors.white,
+              ),
+            ],
+          ),
+          Icon(
+            Icons.arrow_forward_ios_outlined,
+            size: 22,
+            color: Colors.deepPurple,
+          ),
+        ],
       ),
     );
   }
