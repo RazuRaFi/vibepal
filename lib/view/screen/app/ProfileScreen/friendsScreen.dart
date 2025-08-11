@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:vivepal/view/component/CommonText.dart';
 
 class FriendScreen extends StatelessWidget {
@@ -10,7 +12,9 @@ class FriendScreen extends StatelessWidget {
       backgroundColor: Colors.black,
       appBar: AppBar(
         backgroundColor: Colors.black,
-        leading: IconButton(onPressed: (){}, icon: Icon(Icons.arrow_back,color: Colors.white,)),
+        leading: IconButton(onPressed: (){
+          Get.back();
+        }, icon: Icon(Icons.arrow_back,color: Colors.white,)),
         title: CommonText(text: "Friends",fontSize: 24,fontWeight: FontWeight.w700,color: Colors.white,),
       ),
       body: Padding(

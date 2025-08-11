@@ -7,6 +7,7 @@ import 'package:vivepal/view/screen/app/ProfileScreen/terms&Services.dart';
 
 import '../../../component/CommonText.dart';
 import 'contact_us.dart';
+import 'faq_screen.dart';
 import 'feedback_screen.dart';
 
 class EditProfileScreen extends StatelessWidget {
@@ -41,7 +42,7 @@ class EditProfileScreen extends StatelessWidget {
               SizedBox(height: 10,),
               _buildRowBar(title: 'Feedback', icon:Icons.feedback, onTap: () {Get.to(()=>FeedbackScreen());}),
               Divider(thickness: 1,color: Colors.grey.shade900,),
-              _buildRowBar(title: 'FAQ', icon:Icons.question_answer, onTap: () {}),
+              _buildRowBar(title: 'FAQ', icon:Icons.question_answer, onTap: () {Get.to(()=>FaqScreen());}),
               Divider(thickness: 1,color: Colors.grey.shade900,),
               _buildRowBar(title: 'Contact Us', icon:Icons.contact_page, onTap: () {Get.to(()=>ContactUs());}),
               Divider(thickness: 1,color: Colors.grey.shade900,),

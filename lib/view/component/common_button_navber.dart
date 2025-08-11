@@ -27,7 +27,7 @@ class NavBarScreen extends StatelessWidget {
             elevation: 10,
             currentIndex: navController.selectedIndex.value,
             onTap: navController.changeTab,
-            selectedItemColor: AppColors.navber,
+            selectedItemColor: Colors.deepPurpleAccent,
             unselectedItemColor:AppColors.navber,
             selectedFontSize: 15,
             unselectedFontSize: 14,

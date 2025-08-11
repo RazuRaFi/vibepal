@@ -20,7 +20,7 @@ class ContactUs extends StatelessWidget {
           icon: Icon(Icons.arrow_back, size: 25, color: Colors.white),
         ),
         title: CommonText(
-          text: "Feedback",
+          text: "Contact Us",
           fontSize: 24,
           fontWeight: FontWeight.w700,
           color: Colors.white,

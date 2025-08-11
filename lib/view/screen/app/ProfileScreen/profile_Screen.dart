@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:vivepal/view/component/CommonText.dart';
 import 'package:vivepal/view/screen/app/ProfileScreen/edit_profile_screen.dart';
+import 'package:vivepal/view/screen/app/ProfileScreen/friendsScreen.dart';
 import 'package:vivepal/view/screen/app/ProfileScreen/my_post_screen.dart';
 import 'package:vivepal/view/screen/app/ProfileScreen/recent_events.dart';
 
@@ -118,11 +119,16 @@ class ProfileScreen extends StatelessWidget {
                       ],
                     ),
                     SizedBox(height: 15,),
-                    Row(
-                      children: [
-                        CommonText(text: "20",fontSize: 18,fontWeight: FontWeight.w500,color: Colors.white,),
-                        CommonText(text: "Friends",fontSize: 18,fontWeight: FontWeight.w500,color: Colors.white,),
-                      ],
+                    GestureDetector(
+                      onTap: (){
+                        Get.to(()=>FriendScreen());
+                      },
+                      child: Row(
+                        children: [
+                          CommonText(text: "20",fontSize: 18,fontWeight: FontWeight.w500,color: Colors.white,),
+                          CommonText(text: "Friends",fontSize: 18,fontWeight: FontWeight.w500,color: Colors.white,),
+                        ],
+                      ),
                     )
                   ],
                 ),
@@ -216,7 +222,7 @@ class ProfileScreen extends StatelessWidget {
                         CommonText(text: "My Posts",fontSize: 20,fontWeight: FontWeight.w500,color: Colors.white,),
                         GestureDetector(
                           onTap: () {
-                            Get.to(() => RecentEvents());
+                            Get.to(() => MyPostScreen());
                           },
                           child: Row(
                             children: [
