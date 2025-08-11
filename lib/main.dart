@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
         ),
         transitionDuration: const Duration(milliseconds: 300),
         // home: TestScreen(),
-        initialRoute: AppRoutes.mapScreen,
+        initialRoute: AppRoutes.splash,
         getPages: AppRoutes.routes,
       ),
     );

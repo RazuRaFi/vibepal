@@ -1,7 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:vivepal/Utils/App_colors.dart';
 import 'package:vivepal/helper/app_routes.dart';
 import 'package:vivepal/view/component/common_button.dart';
@@ -121,7 +120,7 @@ class SignUpScreen extends StatelessWidget {
                   ),
                   SizedBox(height: 6),
                   CommonTextField(
-                    prefixIcon: Icon(Icons.email_outlined),
+                    prefixIcon: Icon(Icons.lock_outline),
                     hintText: "Enter your password",
                     hintTextColor: Colors.grey.shade700,
                     fillColor: Colors.grey.shade900,
@@ -136,7 +135,7 @@ class SignUpScreen extends StatelessWidget {
                   ),
                   SizedBox(height: 6),
                   CommonTextField(
-                    prefixIcon: Icon(Icons.email_outlined),
+                    prefixIcon: Icon(Icons.lock_outline),
                     hintText: "Enter your confirm password",
                     hintTextColor: Colors.grey.shade700,
                     fillColor: Colors.grey.shade900,
